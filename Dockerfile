@@ -22,7 +22,7 @@ ENV MYSQL_USER_NAME root
 ENV MYSQL_PASSWORD Music2021
 ENV DATABASE_NAME yili_music
 #ENV DATABASE_NAME yili-music
-#ENV APPLICATION_PORT 80
+ENV APPLICATION_PORT 80
 
 # 安装依赖包，如需其他依赖包，请到alpine依赖包管理(https://pkgs.alpinelinux.org/packages?name=php8*imagick*&branch=v3.13)查找。
 RUN apk add --update --no-cache openjdk8-jre-base \
