@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 
     @RequestMapping("/hello")
-    @CrossOrigin("http://localhost:3000")
+    @CrossOrigin("*")
     public class DefaultController {
         @GetMapping()
         public String sayHello(){
