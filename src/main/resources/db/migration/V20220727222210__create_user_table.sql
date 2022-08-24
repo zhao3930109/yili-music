@@ -9,7 +9,7 @@ create table user (
     enabled tinyint(1)  default 1 not null comment "是否可用，1-是，0-否",
     last_login_ip varchar (64) null comment "最后登录IP",
     last_login_time varchar (6) null comment "最后登录时间",
-    create_time datetime(6) not null comment "创建时间",
+    created_time datetime(6) not null comment "创建时间",
     updated_time datetime(6)  not null comment "更新时间",
     CONSTRAINT uk_user_username
         UNIQUE (username)

@@ -5,6 +5,8 @@ import lombok.Data;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.UpdateTimestamp;
+
 
 
 import javax.persistence.GeneratedValue;
@@ -16,12 +18,15 @@ import java.util.Date;
 
 @MappedSuperclass
 @Data
+
 public abstract class AbstractEntity {
     @Id
-    @GeneratedValue
-    @GenericGenerator(name="ksuid", strategy = "com.bilitech.yilimusic.utils.KsuidldentifierGenerator")
+    @GeneratedValue(generator = "ksuid")
+    @GenericGenerator(name = "ksuid", strategy = "com.bilitech.yilimusic.utils.KsuidIdentifierGenerator")
     private String id;
     @CreationTimestamp
     private Date createdTime;
+
+    @UpdateTimestamp
     private Date updatedTime;
 }
