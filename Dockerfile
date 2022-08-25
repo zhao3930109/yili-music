@@ -11,8 +11,8 @@ COPY src /app/src
 # 将pom.xml文件，拷贝到工作目录下
 COPY pom.xml /app
 
-# 执行代码编译命令
-RUN mvn -f /app/pom.xml clean package '-Dspring.profiles.active = test'
+# 执行代码编译命令    这里注意参数要用单引号包住
+RUN mvn -f /app/pom.xml clean package '-Dspring.profiles.active = prop'
 
 # 选择运行时基础镜像
 FROM alpine:3.13
